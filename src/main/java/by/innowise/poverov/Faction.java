@@ -43,7 +43,7 @@ public abstract class Faction implements Runnable {
                 for (RobotPart part : partsFromStorage) {
                     innerPartStorage.put(part, innerPartStorage.get(part) + 1);
                 }
-                Logger.logF("[%s] Received: %s%n", getClass().getSimpleName(), partsFromStorage);
+                System.out.printf("[%s] Received: %s%n", getClass().getSimpleName(), partsFromStorage);
                 tryAssembleRobots();
 
                 CountDownLatch nightLatch = dayNightCycle.getNightLatch();

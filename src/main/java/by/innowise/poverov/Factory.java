@@ -35,7 +35,7 @@ public class Factory implements Runnable {
                     parts.add(RobotPart.values()[random.nextInt(RobotPart.values().length)]);
                 }
                 storage.addPartsToStorage(parts);
-                Logger.logF("[Factory] Produced: %s\n", parts);
+                System.out.printf("[Factory] Produced: %s\n", parts);
 
                 CountDownLatch dayLatch = dayNightCycle.getDayLatch();
                 dayLatch.countDown();
