@@ -77,7 +77,7 @@ public class DayNightCycle implements Runnable {
                 this.dayLatch =  new CountDownLatch(1);
                 this.nightLatch = new CountDownLatch(2);
                 isDay = true;
-                Logger.log("\nDay " + currentDay);
+                System.out.println("\nDay " + currentDay);
                 condition.signalAll();
             } finally {
                 lock.unlock();
@@ -93,7 +93,7 @@ public class DayNightCycle implements Runnable {
             lock.lock();
             try {
                 isDay = false;
-                Logger.log("Night " + currentDay);
+                System.out.println("Night " + currentDay);
                 condition.signalAll();
             } finally {
                 lock.unlock();
